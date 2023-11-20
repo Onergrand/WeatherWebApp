@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&family=Inter:wght@400;700&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Погода</title>
 </head>
-<body>
 
+<body>
+<main>
+    <section class="main-controls">
+        <ul class="main-controls__inputs-list">
+            <li class="main-controls__inputs-list-item">
+                <p>
+                    Широта
+                </p>
+                <input type="text">
+            </li>
+
+            <li class="main-controls__inputs-list-item">
+                <p>
+                    Долгота
+                </p>
+                <input type="text">
+            </li>
+        </ul>
+
+        <button class="main-controls__show-weather">
+            Показать погоду
+        </button>
+    </section>
+
+    <section class="weather-info">
+        <p class="weather-info-temperature"></p>
+    </section>
+</main>
 </body>
+
 </html>
