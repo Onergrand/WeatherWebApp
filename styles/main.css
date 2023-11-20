@@ -1,0 +1,56 @@
+body {
+    margin: 0 0 0 0;
+
+    color: #000;
+    font-family: Inter, serif;
+    font-size: 40px;
+}
+
+.main-controls__inputs-list {
+    padding-left: 0;
+    display: grid;
+    justify-content: center;
+}
+
+.main-controls__inputs-list-item {
+    width: 617px;
+    margin-top: 52px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-controls__inputs-list-item:first-child {
+    margin-top: 0;
+}
+
+.main-controls__inputs-list-item input {
+    margin-left: 47px;
+
+    border: black solid 2px;
+
+    height: 49px;
+    width: 405px;
+}
+
+.main-controls__inputs-list-item p {
+    margin: 0 0 0 0;
+}
+
+.main-controls__container-show-weather {
+    height: 91px;
+    width: 617px;
+
+    color: #fff;
+    font-size: 40px ;
+
+    border-radius: 8px;
+    padding: 21px 144px 21px 144px;
+    background: #355FCA;
+
+}
+
+.main-controls__container {
+    display: grid;
+    justify-content: center;
+}
