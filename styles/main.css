@@ -54,3 +54,8 @@ body {
     display: grid;
     justify-content: center;
 }
+
+.weather-info {
+    display: flex;
+    justify-content: center;
+}
