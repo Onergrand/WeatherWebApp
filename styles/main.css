@@ -103,3 +103,35 @@ h2 {
     font-size: 32px;
     color:#ffffff;
 }
+
+.aside-info {
+    position: fixed;
+    height: 100%;
+    width: 300px;
+    top: 0;
+    left: 0;
+}
+
+
+.aside-info__map {
+    width: 300px;
+    height: 300px;
+}
+
+.aside-info_photo-list {
+    padding-left: 0;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+.aside-info_photo-list li {
+    list-style-type: none;
+
+    width: 49%;
+    height: 133px;
+    margin-bottom: 2px;
+}
+
+.aside-info_photo-list li:first-child {
+}

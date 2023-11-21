@@ -1,4 +1,6 @@
 const apiKey = '00b48d94481070eaee4d91619c5a0bbe';
+let mapIsShown = false;
+let myMap;
 
 const showWeatherButton = document.querySelector('.main-controls__container-show-weather');
 
@@ -19,8 +21,6 @@ function getWeather(apiUrl) {
 }
 
 function getWeatherParameters(currentWeather) {
-    console.log(currentWeather['name']);
-
     document.querySelector('.weather-info__list-item-temperature')
         .textContent = `${Math.round(currentWeather['main']['temp'] - 273)}°C`;
     document.querySelector('.weather-info__list-item-feels')
@@ -32,7 +32,7 @@ function getWeatherParameters(currentWeather) {
     document.querySelector('.weather-info__list-item-wind-speed')
         .textContent = `${convertMilesPerHourToKilometersPerHour(currentWeather['wind']['speed'])}Км/ч`;
     document.querySelector('.weather-info__list-item-wind-direction')
-        .textContent = `Ветер: ${degreesToCompassDirection(parseInt(currentWeather['wind']['deg']))}`;
+        .textContent = `Ветер ${degreesToCompassDirection(parseInt(currentWeather['wind']['deg']))}`;
 
 
     setPlaceName(currentWeather['name']);
@@ -84,10 +84,7 @@ function convertMilesPerHourToKilometersPerHour(milesPerHour) {
     const conversionFactor = 1.60934;
     const kilometersPerHour = milesPerHour * conversionFactor;
 
-    // Округляем до 1 знака после запятой
-    const roundedKilometersPerHour = Math.round(kilometersPerHour * 10) / 10;
-
-    return roundedKilometersPerHour;
+    return Math.round(kilometersPerHour * 10) / 10;
 }
 
 showWeatherButton.onclick = function () {
@@ -97,4 +94,20 @@ showWeatherButton.onclick = function () {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
 
     getWeather(apiUrl)
+
+    ymaps.ready(init);
+
+    function init () {
+        if (mapIsShown) {
+            myMap.destroy();
+        }
+        myMap = new ymaps.Map('map', {
+                center: [latitude, longitude],
+                zoom: 10
+            },
+            {
+                searchControlProvider: 'yandex#search'
+            });
+        mapIsShown = true;
+    }
 }
