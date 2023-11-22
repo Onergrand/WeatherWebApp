@@ -6,37 +6,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&family=Inter:wght@400;700&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="img/icon.svg">
     <title>Погода</title>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<a584fcf4-f282-417f-8b15-4f67c1c9b7f6>" type="text/javascript"></script>
+    <link href="img/snow/snow_1.png" rel="contents">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=a584fcf4-f282-417f-8b15-4f67c1c9b7f6" type="text/javascript"></script>
+    <script type="module" src="scripts/main.js"></script>
+
 </head>
 
 <body>
 <main>
-    <section class="aside-info">
-        <div class="aside-info__map" id="map">
-
-        </div>
-        <ul class="aside-info_photo-list">
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-            <li>
-
-            </li>            <li>
-
-        </li>
-            <li>
-
-            </li>
-        </ul>
-    </section>
-
     <section class="main-controls">
         <ul class="main-controls__inputs-list">
             <li class="main-controls__inputs-list-item">
@@ -55,72 +34,102 @@
         </ul>
 
         <div class="main-controls__container">
-            <button class="main-controls__container-show-weather">
+            <button class="main-controls__container-show-weather animation" id="show-weather">
                 Показать погоду
             </button>
         </div>
     </section>
 
-    <section class="weather-info">
-        <ul class="weather-info__list">
-            <li class="weather-info__list-item">
-                <h2 class="weather-info__list-item-place">
+    <section class="main-weather-info">
+        <ul class="main-weather-info__list">
+            <li class="main-weather-info__list-item">
+                <h2 class="main-weather-info__list-item-place">
                     Место
                 </h2>
-                <p class="weather-info__list-item-time">
+                <p class="main-weather-info__list-item-time">
                     :
                 </p>
             </li>
 
-            <li class="weather-info__list-item">
+            <li class="main-weather-info__list-item">
                 <h2>
                     Температура
                 </h2>
-                <p class="weather-info__list-item-temperature">
+                <p class="main-weather-info__list-item-temperature">
                     °C
                 </p>
             </li>
 
-            <li class="weather-info__list-item">
+            <li class="main-weather-info__list-item">
                 <h2>
                     Ощущается как
                 </h2>
-                <p class="weather-info__list-item-feels">
+                <p class="main-weather-info__list-item-feels">
                     °C
                 </p>
             </li>
 
-            <li class="weather-info__list-item">
+            <li class="main-weather-info__list-item">
                 <h2>
                     Влажность
                 </h2>
-                <p class="weather-info__list-item-humidity">
+                <p class="main-weather-info__list-item-humidity">
                     %
                 </p>
             </li>
 
-            <li class="weather-info__list-item">
+            <li class="main-weather-info__list-item">
                 <h2>
                     Давление
                 </h2>
-                <p class="weather-info__list-item-pressure">
+                <p class="main-weather-info__list-item-pressure">
                     гПа
                 </p>
             </li>
 
-            <li class="weather-info__list-item">
-                <h2 class="weather-info__list-item-wind-direction">
+            <li class="main-weather-info__list-item">
+                <h2 class="main-weather-info__list-item-wind-direction">
                     Ветер
                 </h2>
-                <p class="weather-info__list-item-wind-speed">
+                <p class="main-weather-info__list-item-wind-speed">
                     км/ч
                 </p>
             </li>
         </ul>
     </section>
-</main>
 
-<script src="scripts/main.js"></script>
+    <section class="additional-weather-info">
+        <div class="additional-weather-info__map-info">
+            <div class="additional-weather-info__map-info__block">
+                <h2 class="additional-weather-info__map-info__block-header">
+                    Где находится это место?
+                </h2>
+
+                <p class="additional-weather-info__map-info__block-description">
+                    Вы еще не указали место,<br> которое хотели бы получить
+                </p>
+            </div>
+
+            <div class="additional-weather-info__map-info-map" id="map">
+
+            </div>
+        </div>
+
+        <div class="additional-weather-info__weather">
+            <div class="additional-weather-info__weather-photo" id="photoGallery">
+            </div>
+            <div class="additional-weather-info__weather__block">
+                <h2 class="additional-weather-info__weather__block-header">
+                    Какая погода за окном?
+                </h2>
+
+                <p class="additional-weather-info__weather__block-description">
+                    Вы еще не указали место, в котором<br> хотели бы получить погоду
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
 </body>
 
 </html>
