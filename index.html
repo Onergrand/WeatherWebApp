@@ -17,19 +17,31 @@
 <body>
 <main>
     <section class="main-controls">
+        <aside class="main-controls__history">
+            <div class="main-controls__history__block">
+                <h1>
+                    История
+                </h1>
+                <button class="main-controls__history__block-button">
+                </button>
+            </div>
+            <ul class="main-controls__history__list" id="myList">
+            </ul>
+        </aside>
+
         <ul class="main-controls__inputs-list">
             <li class="main-controls__inputs-list-item">
                 <p>
                     Широта
                 </p>
-                <input type="text" class="main-controls__inputs-list-item-latitude">
+                <input type="number" class="main-controls__inputs-list-item-latitude" placeholder="51.24">
             </li>
 
             <li class="main-controls__inputs-list-item">
                 <p>
                     Долгота
                 </p>
-                <input type="text" class="main-controls__inputs-list-item-longitude">
+                <input type="number" class="main-controls__inputs-list-item-longitude" placeholder="62.32">
             </li>
         </ul>
 
